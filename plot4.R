@@ -40,7 +40,7 @@ par(mfrow = c(2, 2))
 
 plot(Global_active_power ~ datetime, data=dt,type = "l", ylab = "Global Active Power", xlab = "")
 
-plot(Voltage ~ datetime, data=dt,type = "l", ylab = "voltage", xlab = "datetime")
+plot(Voltage ~ datetime, data=dt,type = "l", ylab = "voltage", xlab = "datetime",breaks=4)
 
 plot(Sub_metering_1 ~ datetime, data=dt,type = "l", ylab = "Energy sub metering", xlab = "")
 
@@ -49,6 +49,8 @@ lines(Sub_metering_2 ~ datetime, data=dt,col = "Red")
 lines(Sub_metering_3 ~ datetime, data=dt,col = "Blue")
 
 legend("topright", lty = 1, col = c("black", "red", "blue"),legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
+plot(Global_reactive_power ~ datetime, data=dt,type = "l", ylab = "Global_reactive_power", xlab = "datetime")
 
 dev.copy(png, file = "plot4.png", height = 480, width = 480)
 
